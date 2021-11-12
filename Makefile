@@ -6,27 +6,28 @@
 #    By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 14:46:34 by 0xNino            #+#    #+#              #
-#    Updated: 2021/11/12 14:47:00 by 0xNino           ###   ########.fr        #
+#    Updated: 2021/11/12 19:47:40 by 0xNino           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=
+SRCS			= $(wildcard *.c)
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			=
+#BONUS			=
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+#BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= gcc
-RM				= rm -f
+RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror -I.
 
-NAME			= libft.a
+NAME			= libftprintf.a
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
+				$(CC) $(CFLAGS) -c $(SRCS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
@@ -37,7 +38,6 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:			
 
 .PHONY:			all clean fclean re bonus
