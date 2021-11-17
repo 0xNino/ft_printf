@@ -6,11 +6,11 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:47:59 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/16 17:48:43 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/17 17:59:34 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
 int	ft_putstr_len(char *s)
 {
