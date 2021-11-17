@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 14:34:49 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 14:48:14 by 0xNino           ###   ########.fr       */
+/*   Created: 2021/11/16 17:08:56 by 0xNino            #+#    #+#             */
+/*   Updated: 2021/11/16 17:12:13 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "./libft/libft.h"
+int	ft_intlen(int n)
+{
+	int	i;
 
-int		ft_putchar_len(char c);
-int		ft_putstr_len(char *s);
-int		ft_putnbr_len(int n);
-int		ft_hexlen(unsigned long n);
-int		ft_puthex_len(unsigned long n, int specifier);
-char	ft_htoc(unsigned long n, char specifier);
-char	ft_itoh(char *hex, int len, unsigned long n, char specifier);
-
-#endif
+	i = 0;
+	if (n <= 0)
+	{
+		n *= -1;
+		i++;
+	}
+	while (n)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}

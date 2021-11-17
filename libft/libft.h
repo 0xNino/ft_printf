@@ -6,7 +6,7 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 11:32:34 by ngenoud           #+#    #+#             */
-/*   Updated: 2021/11/15 21:28:32 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/16 17:13:18 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdarg.h>
 
 # define FT_INT_MIN			(-2147483648)
 # define FT_INT_MAX			(2147483647)
 # define FT_LONG_MIN		(-9223372036854775808)
 # define FT_LONG_MAX		(9223372036854775807)
 # define FT_ULONG_MAX		(18446744073709551615)
+# define FT_HEX_LOWER		"0123456789abcdef"
+# define FT_HEX_UPPER		"0123456789ABCDEF"
 
 typedef struct s_list
 {
@@ -81,5 +84,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int n);
+void	ft_putnbr_base(int nbr, char *base);
+int		ft_intlen(int n);
 
 #endif
