@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	ft_puthex_len(unsigned long n, int specifier)
 {
@@ -20,7 +20,7 @@ int	ft_puthex_len(unsigned long n, int specifier)
 	len = ft_hexlen(n);
 	hex = ft_calloc(len + 1, sizeof(char));
 	if (!hex)
-		return (NULL);
+		return (0);
 	if (n == 0)
 		hex[len - 1] = '0';
 	ft_itoh(hex, len, n, specifier);

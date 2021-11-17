@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoh.c                                          :+:      :+:    :+:   */
+/*   ft_hexlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 17:48:03 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 17:59:25 by 0xNino           ###   ########.fr       */
+/*   Created: 2021/11/16 17:19:17 by 0xNino            #+#    #+#             */
+/*   Updated: 2021/11/17 22:42:03 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../includes/ft_printf.h"
 
-char	ft_itoh(char *hex, int len, unsigned long n, char specifier)
+int	ft_hexlen(unsigned long n)
 {
-	unsigned long	reminder;
+	int	i;
 
-	reminder = 0;
+	i = 0;
 	while (n)
 	{
-		reminder = n % 16;
-		hex[len--] = ft_htoc(reminder, specifier);
 		n /= 16;
+		i++;
 	}
-	return (hex);
+	return (i);
 }

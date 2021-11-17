@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 17:47:59 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 17:59:34 by 0xNino           ###   ########.fr       */
+/*   Created: 2021/11/15 21:21:40 by 0xNino            #+#    #+#             */
+/*   Updated: 2021/11/17 22:42:43 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_putstr_len(char *s)
+int	ft_putnbr_len(int n)
 {
-	int	i;
+	long	nbr;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (*s)
+	nbr = n;
+	if (nbr < 0)
 	{
-		write (1, s++, 1);
-		i++;
+		ft_putchar('-');
+		nbr = -nbr;
 	}
-	return (i);
+	if (nbr >= 10)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + 48);
+	return (ft_intlen(n));
 }

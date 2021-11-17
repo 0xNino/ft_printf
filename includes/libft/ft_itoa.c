@@ -6,29 +6,11 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:56:25 by ngenoud           #+#    #+#             */
-/*   Updated: 2021/11/12 17:10:49 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/17 22:56:43 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_intlen(int n)
-{
-	int	i;
-
-	i = 0;
-	if (n <= 0)
-	{
-		n *= -1;
-		i++;
-	}
-	while (n)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_itoa(int n)
 {

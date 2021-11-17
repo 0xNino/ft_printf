@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexlen.c                                        :+:      :+:    :+:   */
+/*   ft_htoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 17:19:17 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 17:58:34 by 0xNino           ###   ########.fr       */
+/*   Created: 2021/11/16 17:41:34 by 0xNino            #+#    #+#             */
+/*   Updated: 2021/11/17 22:42:08 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_hexlen(unsigned long n)
+char	ft_htoc(unsigned long n, char specifier)
 {
-	int	i;
-
-	i = 0;
-	while (n)
+	if (n < 10)
+		return (n + 48);
+	if (n >= 10)
 	{
-		n /= 16;
-		i++;
+		if (specifier == 'p' || specifier == 'x')
+			return (n + 87);
+		else
+			return (n + 55);
 	}
-	return (i);
+	return (0);
 }

@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_len.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 17:45:36 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 17:59:24 by 0xNino           ###   ########.fr       */
+/*   Created: 2021/11/15 17:47:59 by 0xNino            #+#    #+#             */
+/*   Updated: 2021/11/17 22:55:26 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_putchar_len(char c)
+int	ft_putstr_len(char *s)
 {
-	write(1, &c, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (*s)
+	{
+		write (1, s++, 1);
+		i++;
+	}
+	return (i);
 }
