@@ -6,7 +6,7 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:45:36 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/18 13:46:01 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/18 23:13:17 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 {
 	int	len;
 
-	len = ft_putchar_len('9');
+	len = (int) ft_putchar_len('9');
 	printf("%i", len);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:08:38 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/18 14:00:14 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/19 00:15:20 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,13 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	count = 0;
+	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			count += ft_specifier(format[i], args, count);
+			count = ft_specifier(format[i], args, count);
 		}
 		else
 			count += ft_putchar_len(format[i]);
@@ -55,7 +56,7 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 int	main(void)
 {
 //	char	*str;
@@ -70,3 +71,4 @@ int	main(void)
 //	ft_printf("Print a pointer : %p\n", );
 //	ft_printf("Print an int %d\n", nbr);
 }
+*/
