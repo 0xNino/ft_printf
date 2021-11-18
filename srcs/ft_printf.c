@@ -6,7 +6,7 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:08:38 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 22:42:25 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/18 14:00:14 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_specifier(char c, va_list args, int count)
 {
 	if (c == 'c')
-		count += ft_putchar_len(va_arg(args, char));
+		count += ft_putchar_len(va_arg(args, int));
 	if (c == 's')
 		count += ft_putstr_len(va_arg(args, char *));
 	if (c == 'p')
@@ -39,12 +39,14 @@ int	ft_printf(const char *format, ...)
 	int		count;
 	va_list	args;
 
+	i = 0;
+	count = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			count = ft_specifier(format[i], args, count);
+			count += ft_specifier(format[i], args, count);
 		}
 		else
 			count += ft_putchar_len(format[i]);
@@ -52,4 +54,19 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+int	main(void)
+{
+//	char	*str;
+//	int		nbr;
+//
+//	str = NULL;
+//	nbr = 0;
+//	strlcpy(str, "Salut", 10);
+	ft_printf("Hello world\n");
+	ft_printf("Print a char : %c\n", 'A');
+//	ft_printf("Print a string : %s\n", str);
+//	ft_printf("Print a pointer : %p\n", );
+//	ft_printf("Print an int %d\n", nbr);
 }
