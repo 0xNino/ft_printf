@@ -6,7 +6,7 @@
 #    By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 14:46:34 by 0xNino            #+#    #+#              #
-#    Updated: 2021/11/18 23:06:31 by 0xNino           ###   ########.fr        #
+#    Updated: 2021/11/19 13:41:44 by 0xNino           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,7 @@ $(NAME): ${OBJS}
 		make -sC ./includes/libft/
 		cp includes/libft/libft.a .
 		mv libft.a $(NAME)
-		ar rc  $(NAME) $(OBJS)
-		ranlib $(NAME)
+		ar rcs  $(NAME) $(OBJS)
 
 all:	$(NAME)
 
