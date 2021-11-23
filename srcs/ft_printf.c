@@ -6,7 +6,7 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:08:38 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/19 15:45:23 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/23 15:46:29 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_specifier(char c, va_list args, int count)
 	if (c == 's')
 		count += ft_putstr_len(va_arg(args, char *));
 	if (c == 'p')
-		count += ft_puthex_len(va_arg(args, unsigned int), 'p');
+		count += ft_puthex_len(va_arg(args, unsigned long), 'p');
 	if (c == 'd' || c == 'i')
 		count += ft_putnbr_len(va_arg(args, int), 'd');
 	if (c == 'u')

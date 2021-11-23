@@ -6,21 +6,21 @@
 #    By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 14:46:34 by 0xNino            #+#    #+#              #
-#    Updated: 2021/11/19 13:41:44 by 0xNino           ###   ########.fr        #
+#    Updated: 2021/11/23 15:58:16 by 0xNino           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT		=	includes/libft
-FT_PRINTF	=	srcs
+LIBFT	=	includes/libft
+SRC		=	srcs
 
-SRCS		=	$(FT_PRINTF)/ft_hexlen.c \
-				$(FT_PRINTF)/ft_htoc.c \
-				$(FT_PRINTF)/ft_itoh.c \
-				$(FT_PRINTF)/ft_printf.c \
-				$(FT_PRINTF)/ft_putchar_len.c \
-				$(FT_PRINTF)/ft_puthex_len.c \
-				$(FT_PRINTF)/ft_putnbr_len.c \
-				$(FT_PRINTF)/ft_putstr_len.c \
+SRCS	=	$(SRC)/ft_hexlen.c \
+			$(SRC)/ft_htoc.c \
+			$(SRC)/ft_itoh.c \
+			$(SRC)/ft_printf.c \
+			$(SRC)/ft_putchar_len.c \
+			$(SRC)/ft_puthex_len.c \
+			$(SRC)/ft_putnbr_len.c \
+			$(SRC)/ft_putstr_len.c \
 
 OBJS	= ${SRCS:.c=.o}
 

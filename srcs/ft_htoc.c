@@ -6,7 +6,7 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:41:34 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 22:42:08 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/23 15:54:44 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,13 @@ char	ft_htoc(unsigned long n, char specifier)
 	}
 	return (0);
 }
+/*
+int	main(int argc, char **argv)
+{
+	if (argc == 3)
+	{
+		printf("%c\n", ft_htoc(atoi(argv[1]), argv[2][0]));
+	}
+	return (0);
+}
+*/

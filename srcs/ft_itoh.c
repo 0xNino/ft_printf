@@ -6,7 +6,7 @@
 /*   By: 0xNino <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:48:03 by 0xNino            #+#    #+#             */
-/*   Updated: 2021/11/17 22:42:13 by 0xNino           ###   ########.fr       */
+/*   Updated: 2021/11/23 15:54:40 by 0xNino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_itoh(char *hex, int len, unsigned long n, char specifier)
 	unsigned long	reminder;
 
 	reminder = 0;
+	len--;
 	while (n)
 	{
 		reminder = n % 16;
@@ -25,3 +26,15 @@ char	*ft_itoh(char *hex, int len, unsigned long n, char specifier)
 	}
 	return (hex);
 }
+/*
+int	main(int argc, char **argv)
+{
+	char	*hex;
+
+	hex = ft_calloc(atoi(argv[1]) + 1, sizeof(char));
+	if (argc == 4)
+	{
+		printf("%s\n", ft_itoh(hex, atoi(argv[1]), atoi(argv[2]), argv[3][0]));
+	}
+}
+*/

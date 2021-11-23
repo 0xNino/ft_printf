@@ -23,13 +23,14 @@ int	ft_puthex_len(unsigned long n, int specifier)
 		return (0);
 	if (n == 0)
 		hex[len - 1] = '0';
-	ft_itoh(hex, len, n, specifier);
+	hex = ft_itoh(hex, len, n, specifier);
 	if (specifier == 'p')
 	{
 		if (hex[len - 1] == '0' && len - 1 == 0)
 			ft_printf("%s", "0x0");
 		else
 			ft_printf("0x%s", hex);
+		len += 2;
 	}
 	else
 		ft_printf("%s", hex);
